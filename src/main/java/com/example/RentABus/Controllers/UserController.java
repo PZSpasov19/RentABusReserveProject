@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class UserController {
     private final UserService userService;
 
+    /** @noinspection SpringJavaInjectionPointsAutowiringInspection*/
     public UserController(UserService userService) {
         this.userService = userService;
     }
