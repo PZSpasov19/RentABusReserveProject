@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-image: url('https://wallpapercave.com/wp/wp2120656.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px 0;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.menu li {
+    display: inline-block;
+    margin-right: 20px;
+    position: relative;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    transition: transform 0.3s ease-in-out; /* Apply transition for transform */
+}
+
+.menu li a.hover-animation {
+    transform: translateZ(20px) rotateX(20deg) rotateY(10deg) scale(1.1);
+}
