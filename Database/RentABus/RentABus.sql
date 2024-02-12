@@ -1,4 +1,4 @@
-USE RentABusDatabase
+USE RentABusDatabase;
 
 CREATE TABLE Admins (
     AdminId INT PRIMARY KEY,
@@ -17,23 +17,23 @@ CREATE TABLE Users (
 );
 
 CREATE TABLE BusCompanies (
-    company_id INT PRIMARY KEY,
-    company_name VARCHAR(255) NOT NULL,
-    contact_person VARCHAR(255),
-    contact_email VARCHAR(255),
-    contact_phone VARCHAR(20)
+    CompanyId INT PRIMARY KEY,
+    CompanyName VARCHAR(255) NOT NULL,
+    ContactPerson VARCHAR(255),
+    ContactEmail VARCHAR(255),
+    ContactPhone VARCHAR(20)
 );
 
 CREATE TABLE booking (
-    booking_id INT PRIMARY KEY,
-    user_id INT,
-    company_id INT,
-    bus_type VARCHAR(50),
-    departure_date DATE,
-    return_date DATE,
-    total_passengers INT,
-    total_cost DECIMAL(10, 2),
-    FOREIGN KEY (user_id) REFERENCES Users(user_id),
-    FOREIGN KEY (company_id) REFERENCES BusCompanies(company_id)
+    BookingId INT PRIMARY KEY,
+    UserId INT,
+    CompanyId INT,
+    BusType VARCHAR(50),
+    DepartureDate DATE,
+    ReturnDate DATE,
+    TotalPassengers INT,
+    TotalCost DECIMAL(10, 2),
+    FOREIGN KEY (UserId) REFERENCES Users(UserId),
+    FOREIGN KEY (CompanyId) REFERENCES BusCompanies(CompanyId)
 );
 
