@@ -1,4 +1,4 @@
-package com.example.RentABus.Models;
+package com.example.RentABus.models;
 
 public class Bus {
     private Long id;

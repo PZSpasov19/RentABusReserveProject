@@ -1,9 +1,11 @@
-package com.example.RentABus.Services;
+package com.example.RentABus.services;
 
-import com.example.RentABus.Models.User;
-import com.example.RentABus.Repositories.UserRepository;
+import com.example.RentABus.models.User;
+import com.example.RentABus.repositories.UserRepository;
 import org.springframework.stereotype.Service;
 
+
+@Service
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
 

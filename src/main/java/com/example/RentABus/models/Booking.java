@@ -1,4 +1,4 @@
-package com.example.RentABus.Models;
+package com.example.RentABus.models;
 
 import java.time.LocalDate;
 

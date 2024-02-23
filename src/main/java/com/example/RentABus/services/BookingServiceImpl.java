@@ -1,10 +1,12 @@
-package com.example.RentABus.Services;
+package com.example.RentABus.services;
 
-import com.example.RentABus.Models.Booking;
-import com.example.RentABus.Repositories.BookingRepository;
+import com.example.RentABus.models.Booking;
+import com.example.RentABus.repositories.BookingRepository;
+import org.springframework.stereotype.Service;
+
 import java.util.*;
 
-
+@Service
 public class BookingServiceImpl implements BookingService {
     private final BookingRepository bookingRepository;
 

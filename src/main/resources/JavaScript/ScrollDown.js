@@ -1,14 +1,19 @@
-const scrollSpeed = 2;
-const contentHeight = document.getElementById('content').scrollHeight;
-let scrollPosition = 0;
-const intervalTime = 50;
+document.addEventListener('DOMContentLoaded', function() {
+    var button = document.getElementById('scrollDownButton');
 
-function scrollPage() {
-    scrollPosition += scrollSpeed;
-    if (scrollPosition >= contentHeight - window.innerHeight) {
-        clearInterval(scrollInterval);
-    }
-    window.scroll(0, scrollPosition);
-}
+    button.addEventListener('click', function() {
+        window.scrollBy({
+            top: window.innerHeight,
+            behavior: 'smooth'
+        });
+    });
 
-const scrollInterval = setInterval(scrollPage, intervalTime);
+    // Show the button when scrolling down, hide when at the top
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 0) {
+            button.style.display = 'block';
+        } else {
+            button.style.display = 'none';
+        }
+    });
+});

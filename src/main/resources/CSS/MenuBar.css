@@ -5,7 +5,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    overflow-y: auto;
+    overflow: auto;
 }
 
 .container {
@@ -13,7 +13,6 @@ body {
     background-size: cover;
     background-position: center;
     height: 100vh;
-    overflow: hidden;
 }
 
 header {
@@ -76,3 +75,28 @@ header {
     height: auto;
     border-radius: 20px;
 }
+
+
+
+#scrollDownButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it's above other elements */
+    display: none; /* Initially hidden */
+}
+
+#scrollDownButton:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+

@@ -1,17 +1,18 @@
 USE RentABusDatabase;
 
+
 CREATE TABLE Admins (
     AdminId INT PRIMARY KEY,
     FirstName VARCHAR(255) NOT NULL,
 	LastName VARCHAR(255) NOT NULL,
 	EmailAddress VARCHAR(255) NOT NULL,
 	PhoneNumber int,
-    [Password] VARCHAR(255) NOT NULL
+    Password VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE Users (
     UserId INT PRIMARY KEY,
-    [Password] VARCHAR(255) NOT NULL,
+    Password VARCHAR(255) NOT NULL,
     FullName VARCHAR(255) NOT NULL,
     EmailAddress VARCHAR(255) NOT NULL
 );

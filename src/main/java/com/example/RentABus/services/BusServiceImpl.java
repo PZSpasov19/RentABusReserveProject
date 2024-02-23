@@ -1,10 +1,13 @@
-package com.example.RentABus.Services;
+package com.example.RentABus.services;
 
-import com.example.RentABus.Models.Bus;
-import com.example.RentABus.Repositories.BusRepository;
+import com.example.RentABus.models.Bus;
+import com.example.RentABus.repositories.BusRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
+@Service
 public class BusServiceImpl implements BusService {
     private final BusRepository busRepository;
 

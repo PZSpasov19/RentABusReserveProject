@@ -1,6 +1,6 @@
-package com.example.RentABus.Services;
+package com.example.RentABus.services;
 
-import com.example.RentABus.Models.Booking;
+import com.example.RentABus.models.Booking;
 
 public interface BookingService {
     void saveBooking(Booking booking);

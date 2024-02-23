@@ -1,6 +1,6 @@
-package com.example.RentABus.Services;
+package com.example.RentABus.services;
 
-import com.example.RentABus.Models.Bus;
+import com.example.RentABus.models.Bus;
 
 import java.util.List;
 

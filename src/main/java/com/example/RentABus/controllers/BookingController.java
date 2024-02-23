@@ -1,7 +1,7 @@
-package com.example.RentABus.Controllers;
+package com.example.RentABus.controllers;
 
-import com.example.RentABus.Models.Booking;
-import com.example.RentABus.Services.BookingService;
+import com.example.RentABus.models.Booking;
+import com.example.RentABus.services.BookingService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

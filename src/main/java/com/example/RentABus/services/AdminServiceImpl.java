@@ -1,9 +1,12 @@
-package com.example.RentABus.Services;
+package com.example.RentABus.services;
 
-import com.example.RentABus.Models.Admin;
-import com.example.RentABus.Repositories.AdminRepository;
+import com.example.RentABus.models.Admin;
+import com.example.RentABus.repositories.AdminRepository;
+import org.springframework.stereotype.Service;
+
 import java.util.*;
 
+@Service
 public class AdminServiceImpl implements AdminService {
     private final AdminRepository adminRepository;
 
