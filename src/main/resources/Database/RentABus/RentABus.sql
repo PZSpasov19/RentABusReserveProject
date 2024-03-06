@@ -28,6 +28,7 @@ CREATE TABLE BusCompanies (
 CREATE TABLE booking (
     BookingId INT PRIMARY KEY,
     UserId INT,
+    AdminId INT,
     CompanyId INT,
     BusType VARCHAR(50),
     DepartureDate DATE,
@@ -35,6 +36,7 @@ CREATE TABLE booking (
     TotalPassengers INT,
     TotalCost DECIMAL(10, 2),
     FOREIGN KEY (UserId) REFERENCES Users(UserId),
+    FOREIGN KEY (AdminId) REFERENCES Admins(AdminId),
     FOREIGN KEY (CompanyId) REFERENCES BusCompanies(CompanyId)
 );
 
