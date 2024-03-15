@@ -5,8 +5,9 @@ html {
 body {
     margin: 0;
     padding: 0;
-    overflow: auto;
 }
+
+
 
 .container {
     background-image: url('../Images/Background-image.jpg');
@@ -16,7 +17,8 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh; /* Set container height to viewport height */
+    overflow-y: auto;
     z-index: -1;
 }
 

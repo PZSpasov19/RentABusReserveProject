@@ -1,17 +1,14 @@
-window.addEventListener('scroll', function() {
-    var scrollPosition = window.scrollY;
-    var parallaxContainer = document.querySelector('.container');
-    var parallaxOffset = scrollPosition * 0.5;
+document.addEventListener("DOMContentLoaded", function() {
+    var loginBtn = document.getElementById("loginBtn");
+    var loginForm = document.getElementById("loginForm");
 
-    parallaxContainer.style.backgroundPositionY = -parallaxOffset + 'px';
+    loginBtn.addEventListener("click", function() {
+        // Toggle the visibility of the login form
+        loginForm.style.display = loginForm.style.display === "block" ? "none" : "block";
+    });
 });
-
-document.getElementById("popupBtn").addEventListener("click", function() {
-    document.getElementById("popup").style.display = "block";
-});
-
-document.addEventListener("click", function(event) {
-    if (event.target.closest("#popup") === null && event.target.id !== "popupBtn") {
-        document.getElementById("popup").style.display = "none";
-    }
+loginBtn.addEventListener("click", function() {
+    console.log("Button clicked");
+    // Toggle the visibility of the login form
+    loginForm.style.display = loginForm.style.display === "block" ? "none" : "block";
 });

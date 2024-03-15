@@ -1,3 +1,17 @@
+.login-form {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    z-index: 999;
+}
+
 .login-button {
     position: absolute;
     top: 20px;
@@ -13,4 +27,9 @@
 .login-button:hover {
     background-color: white;
     color: black;
+}
+
+
+.login-form {
+    display: none; /* Initially hide the login form */
 }
