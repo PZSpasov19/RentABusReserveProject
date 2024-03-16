@@ -25,7 +25,7 @@ CREATE TABLE BusCompanies (
     ContactPhone VARCHAR(20)
 );
 
-CREATE TABLE booking (
+CREATE TABLE Booking (
     BookingId INT PRIMARY KEY,
     UserId INT,
     AdminId INT,
