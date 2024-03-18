@@ -9,34 +9,34 @@ import java.time.LocalDate;
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "BookingId")
+    @Column(name = "bookingid")
     private Long bookingId;
 
     @ManyToOne
-    @JoinColumn(name = "UserId")
+    @JoinColumn(name = "userid")
     private Users user;
 
     @ManyToOne
-    @JoinColumn(name = "AdminId")
+    @JoinColumn(name = "adminid")
     private Admins admin;
 
     @ManyToOne
-    @JoinColumn(name = "CompanyId")
+    @JoinColumn(name = "companyid")
     private BusCompanies busCompany;
 
-    @Column(name = "BusType")
+    @Column(name = "bustype")
     private String busType;
 
-    @Column(name = "DepartureDate")
+    @Column(name = "departuredate")
     private LocalDate departureDate;
 
-    @Column(name = "ReturnDate")
+    @Column(name = "returnDate")
     private LocalDate returnDate;
 
-    @Column(name = "TotalPassengers")
+    @Column(name = "totalpassengers")
     private int totalPassengers;
 
-    @Column(name = "TotalCost")
+    @Column(name = "totalcost")
     private double totalCost;
 
     public Booking() {

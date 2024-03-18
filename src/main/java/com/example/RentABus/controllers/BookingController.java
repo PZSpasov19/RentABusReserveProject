@@ -1,6 +1,6 @@
 package com.example.RentABus.controllers;
 
-import com.example.RentABus.models.Booking;
+import com.example.RentABus.entities.Booking;
 import com.example.RentABus.services.BookingService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,6 +1,6 @@
 package com.example.RentABus.services;
 
-import com.example.RentABus.models.User;
+import com.example.RentABus.entities.Users;
 import com.example.RentABus.repositories.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -14,12 +14,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getUserByUsername(String username) {
-        return userRepository.getUserByUsername(username);
+    public Users getUserByUsername(String username) {
+        return userRepository.findByFullName(username);
     }
 
     @Override
-    public void saveUser(User user) {
-        userRepository.saveUser(user);
+    public void saveUser(Users user) {
+        userRepository.save(user);
     }
 }

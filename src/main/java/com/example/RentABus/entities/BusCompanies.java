@@ -3,35 +3,45 @@ package com.example.RentABus.entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "BusCompanies")
 public class BusCompanies {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "CompanyId")
+    @Column(name = "companyid")
     private Long id;
 
-    @Column(name = "CompanyName")
+    @Column(name = "companyname")
     private String companyName;
 
-    @Column(name = "ContactPerson")
+    @Column(name = "contactperson")
     private String contactPerson;
 
-    @Column(name = "ContactEmail")
+    @Column(name = "contactemail")
     private String contactEmail;
 
-    @Column(name = "ContactPhone")
+    @Column(name = "contactphone")
     private String contactPhone;
+
+    @Column(name = "isavailable")
+    private boolean isAvailable;
+
+    @OneToMany(mappedBy = "busCompany")
+    private List<Booking> bookingList;
+
 
     public BusCompanies() {
     }
 
-    public BusCompanies(Long id, String companyName, String contactPerson, String contactEmail, String contactPhone) {
+    public BusCompanies(Long id, String companyName, String contactPerson, String contactEmail, String contactPhone, boolean isAvailable) {
         this.id = id;
         this.companyName = companyName;
         this.contactPerson = contactPerson;
         this.contactEmail = contactEmail;
         this.contactPhone = contactPhone;
+        this.isAvailable = isAvailable;
     }
 
     public Long getId() {
@@ -72,5 +82,13 @@ public class BusCompanies {
 
     public void setContactPhone(String contactPhone) {
         this.contactPhone = contactPhone;
+    }
+
+    public boolean isAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(boolean available) {
+        isAvailable = available;
     }
 }

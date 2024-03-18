@@ -1,6 +1,6 @@
 package com.example.RentABus.services;
 
-import com.example.RentABus.models.Bus;
+import com.example.RentABus.entities.BusCompanies;
 import com.example.RentABus.repositories.BusRepository;
 import org.springframework.stereotype.Service;
 
@@ -16,21 +16,29 @@ public class BusServiceImpl implements BusService {
     }
 
     @Override
-    public List<Bus> getAllBuses() {
-        return busRepository.getAllBuses();
+    public List<BusCompanies> getAllBuses() {
+        return busRepository.findAll();
     }
 
     @Override
-    public Bus getBusById(Long id) {
-        return busRepository.getBusById(id);
+    public BusCompanies getBusById(Long id) {
+        var bus = busRepository.findById(id);
+        if(bus.isPresent())
+        {
+            return bus.get();
+        }
+        return null;
     }
 
     @Override
     public void rentBus(Long id) {
-        Bus bus = busRepository.getBusById(id);
-        if (bus != null && bus.isAvailable()) {
-            bus.setAvailable(false);
-            busRepository.updateBus(bus);
+        var bus = busRepository.findById(id);
+        if (bus.isPresent()) {
+            var getBus = bus.get();
+            getBus.setAvailable(false);
+            busRepository.save(getBus);
         }
     }
+
+
 }

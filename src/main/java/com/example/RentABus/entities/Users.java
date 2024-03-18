@@ -3,22 +3,29 @@ package com.example.RentABus.entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "Users")
 public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "UserId")
+    @Column(name = "userid")
     private Long id;
 
-    @Column(name = "Password")
+
+
+    @Column(name = "password")
     private String password;
 
-    @Column(name = "FullName")
+    @Column(name = "fullname")
     private String fullName;
 
-    @Column(name = "EmailAddress")
+    @Column(name = "emailaddress")
     private String emailAddress;
+
+    @OneToMany(mappedBy = "user")
+    private List<Booking> bookingList;
 
     public Users() {
     }

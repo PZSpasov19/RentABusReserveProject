@@ -1,6 +1,6 @@
 package com.example.RentABus.services;
 
-import com.example.RentABus.models.Admin;
+import com.example.RentABus.entities.Admins;
 import com.example.RentABus.repositories.AdminRepository;
 import org.springframework.stereotype.Service;
 
@@ -15,15 +15,14 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public Admin getAdminByUsername(String username) {
-        return adminRepository.getAdminByUsername(username);
+    public Admins getAdminByUsername(String username) {
+        return adminRepository.findByEmailAddress(username);
     }
 
 
     @Override
-    public List<Admin> getAllAdmins() {
-        return adminRepository.getAllAdmins();
+    public List<Admins> getAllAdmins() {
+        return adminRepository.findAll();
     }
-
     // Additional methods implementation
 }

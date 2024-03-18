@@ -22,7 +22,8 @@ CREATE TABLE BusCompanies (
     CompanyName VARCHAR(255) NOT NULL,
     ContactPerson VARCHAR(255),
     ContactEmail VARCHAR(255),
-    ContactPhone VARCHAR(20)
+    ContactPhone VARCHAR(20),
+    IsAvailable BIT(1)
 );
 
 CREATE TABLE Booking (

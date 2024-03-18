@@ -1,8 +1,8 @@
 package com.example.RentABus.services;
 
-import com.example.RentABus.models.User;
+import com.example.RentABus.entities.Users;
 
 public interface UserService {
-    User getUserByUsername(String username);
-    void saveUser(User user);
+    Users getUserByUsername(String username);
+    void saveUser(Users user);
 }

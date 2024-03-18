@@ -1,6 +1,6 @@
 package com.example.RentABus.controllers;
 
-import com.example.RentABus.models.Bus;
+import com.example.RentABus.entities.BusCompanies;
 import com.example.RentABus.services.BusService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,7 +19,7 @@ public class BusController {
 
     @GetMapping("/buses")
     public String getAllBuses(Model model) {
-        List<Bus> buses = busService.getAllBuses();
+        List<BusCompanies> buses = busService.getAllBuses();
         model.addAttribute("buses", buses);
         return "buses";
     }

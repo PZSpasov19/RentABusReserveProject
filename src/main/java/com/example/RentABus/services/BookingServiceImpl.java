@@ -1,6 +1,6 @@
 package com.example.RentABus.services;
 
-import com.example.RentABus.models.Booking;
+import com.example.RentABus.entities.Booking;
 import com.example.RentABus.repositories.BookingRepository;
 import org.springframework.stereotype.Service;
 
@@ -16,12 +16,12 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public void saveBooking(Booking booking) {
-        bookingRepository.saveBooking(booking);
+        bookingRepository.save(booking);
     }
 
     @Override
     public List<Booking> getAllBookings() {
-        return bookingRepository.getAllBookings();
+        return bookingRepository.findAll();
     }
 
 

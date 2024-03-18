@@ -1,9 +1,9 @@
 package com.example.RentABus.services;
 
-import com.example.RentABus.models.Admin;
+import com.example.RentABus.entities.Admins;
 
 public interface AdminService {
-    Admin getAdminByUsername(String username);
+    Admins getAdminByUsername(String username);
 
     Object getAllAdmins();
 }

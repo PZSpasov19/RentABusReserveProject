@@ -1,11 +1,11 @@
 package com.example.RentABus.services;
 
-import com.example.RentABus.models.Bus;
+import com.example.RentABus.entities.BusCompanies;
 
 import java.util.List;
 
 public interface BusService {
-    List<Bus> getAllBuses();
-    Bus getBusById(Long id);
+    List<BusCompanies> getAllBuses();
+    BusCompanies getBusById(Long id);
     void rentBus(Long id);
 }

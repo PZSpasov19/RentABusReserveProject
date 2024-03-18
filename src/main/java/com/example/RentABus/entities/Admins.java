@@ -2,25 +2,31 @@ package com.example.RentABus.entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "Admins")
 public class Admins {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "AdminId")
+    @Column(name = "adminid")
     private Long id;
 
-    @Column(name = "FirstName")
+    @Column(name = "firstname")
     private String firstName;
 
-    @Column(name = "LastName")
+    @Column(name = "lastname")
     private String lastName;
 
-    @Column(name = "EmailAddress")
+    @Column(name = "emailaddress")
     private String emailAddress;
 
-    @Column(name = "Password")
+    @Column(name = "password")
     private String password;
+
+    @OneToMany(mappedBy = "admin")
+    private List<Booking> bookingList;
+
 
     public Admins() {
     }
