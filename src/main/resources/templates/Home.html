@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="UTF-8">
   <title>Главна страница</title>
@@ -17,48 +17,24 @@
         <li><a href="../HTML/Companies.html">Компании</a></li>
       </ul>
     </nav>
-      <button id="loginBtn" class="login-button">Вход / Регистрация</button>
-      <div id="loginForm" class="login-form">
-        <form>
-          <h2>Login</h2>
-          <label for="loginUsername">Username:</label>
-          <input type="text" id="loginUsername" name="loginUsername">
-          <label for="loginPassword">Password:</label>
-          <input type="password" id="loginPassword" name="loginPassword">
-          <button type="submit">Login</button>
-        </form>
-        <hr>
-        <form>
-          <h2>Register</h2>
-          <label for="registerUsername">Username:</label>
-          <input type="text" id="registerUsername" name="registerUsername">
-          <label for="registerEmail">Email:</label>
-          <input type="email" id="registerEmail" name="registerEmail">
-          <label for="registerPassword">Password:</label>
-          <input type="password" id="registerPassword" name="registerPassword">
-          <button type="submit">Register</button>
-        </form>
-      </div>
-</div>
-    </nav>
   </header>
-  <div class = "Box">
+
+</div>
+
+<div class="Box">
   <section class="parallax">
     <h1>Добре дошли в TravelWorld!</h1>
     <p>Открийте най-удобния начин за пътуване с нашите автобусни услуги.</p>
-    <img src = "../Images/Bus.jpg" class = "image-box" alt="Bus image">
-    <img src = "../Images/Buses.jpg" alt="Bus image2">
+    <img src="../Images/Bus.jpg" class="image-box" alt="Bus image">
+    <img src="../Images/Buses.jpg" alt="Bus image2">
   </section>
-  </div>
-
-  <div class="content">
-    <h2>За нас</h2>
-    <p>Ние сме водеща компания в предлагането на автобусни услуги за всеки тип пътуване. Нашите професионални и опитни шофьори, съвременни автобуси и персонализирани решения правят вашето пътуване приятно и безпроблемно.</p>
-    <a href="../HTML/About.html">Научете повече</a>
-  </div>
-
 </div>
 
+<div class="content">
+  <h2>За нас</h2>
+  <p>Ние сме водеща компания в предлагането на автобусни услуги за всеки тип пътуване. Нашите професионални и опитни шофьори, съвременни автобуси и персонализирани решения правят вашето пътуване приятно и безпроблемно.</p>
+  <a href="../HTML/About.html">Научете повече</a>
+</div>
 
 <script src="../JavaScript/MenuBar.js"></script>
 </body>
