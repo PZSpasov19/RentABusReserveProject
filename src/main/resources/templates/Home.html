@@ -6,18 +6,21 @@
   <link rel="stylesheet" href="../static/CSS/MenuBar.css" th:href="@{CSS/MenuBar.css}">
 </head>
 <body>
-<div class="container">
+
+<header>
   <img src="../Logo/logo.png" alt="Logo" class="logo">
-  <header>
-    <nav>
-      <ul class="menu">
-        <li><a href="../HTML/Home.html">Главна страница</a></li>
-        <li><a href="../HTML/About.html">За нас</a></li>
-        <li><a href="../HTML/Gallery.html">Галерия</a></li>
-        <li><a href="../HTML/Companies.html">Компании</a></li>
-      </ul>
-    </nav>
-  </header>
+  <nav>
+    <ul class="menu">
+      <li><a href="../HTML/Home.html" th:href="@{/Home}">Главна страница</a></li>
+      <li><a href="About">За нас</a></li>
+      <li><a href="../HTML/Gallery.html">Галерия</a></li>
+      <li><a href="../HTML/Companies.html">Компании</a></li>
+    </ul>
+  </nav>
+</header>
+<div class="container">
+
+
 
 </div>
 

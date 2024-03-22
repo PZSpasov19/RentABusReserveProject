@@ -23,7 +23,7 @@ CREATE TABLE BusCompanies (
     ContactPerson VARCHAR(255),
     ContactEmail VARCHAR(255),
     ContactPhone VARCHAR(20),
-    IsAvailable BIT(1)
+    IsAvailable BIT
 );
 
 CREATE TABLE Booking (
