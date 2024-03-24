@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Галерия</title>
-    <link rel="stylesheet" href="../static/CSS/MenuBar.css" th:href="@{CSS/MenuBar.css}">
+    <link rel="stylesheet" href="../static/CSS/MenuBar.css" th:href="@{/CSS/MenuBar.css}">
 </head>
 <body>
 <div class="container">
@@ -11,12 +11,11 @@
         <img src="../Logo/logo.png" alt="Logo" class="logo">
         <nav>
             <ul class="menu">
-                <li><a href="../HTML/Home.html">Главна страница</a></li>
-                <li><a href="../HTML/About.html">За нас</a></li>
-                <li><a href="../HTML/Gallery.html">Галерия</a></li>
-                <li><a href="../HTML/Companies.html">Компании</a></li>
+                <li><a th:href="@{/Home}">Главна страница</a></li>
+                <li><a th:href="@{/about}">За нас</a></li>
+                <li><a th:href="@{/gallery}">Галерия</a></li>
+                <li><a th:href="@{/companies}">Компании</a></li>
             </ul>
-            <button id="loginBtn" class="login-button">Вход / Регистрация</button>
         </nav>
     </header>
 </div>

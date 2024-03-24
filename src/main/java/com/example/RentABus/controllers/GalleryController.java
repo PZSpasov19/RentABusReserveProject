@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class GalleryController {
-    @GetMapping("/Gallery")
-    public String getHome() {
+    @GetMapping("/gallery")
+    public String getGallery() {
         return "Gallery";
     }
 }

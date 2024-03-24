@@ -10,7 +10,6 @@ body {
 
 
 .container {
-    background-image: url('../Images/Background-image.jpg');
     background-size: cover;
     background-position: center;
     position: fixed;
@@ -20,6 +19,7 @@ body {
     height: 100vh; /* Set container height to viewport height */
     overflow-y: auto;
     z-index: -1;
+    color: white;
 }
 
 .content-container {
