@@ -7,12 +7,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
 public class UserController {
     private final UserService userService;
 
-    /** @noinspection SpringJavaInjectionPointsAutowiringInspection*/
     public UserController(UserService userService) {
         this.userService = userService;
     }
@@ -23,11 +23,11 @@ public class UserController {
         return "login";
     }
 
-    @PostMapping("/login")
-    public String login(@ModelAttribute Users user) {
-        // Add login logic here
-        return "redirect:/buses";
-    }
+//    @PostMapping("/login")
+//    public String login(@ModelAttribute Users user) {
+//
+//        return "redirect:/buses";
+//    }
 
     @GetMapping("/register")
     public String showRegistrationForm(Model model) {
@@ -36,8 +36,8 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public String register(@ModelAttribute Users user) {
+    public RedirectView register(@ModelAttribute Users user) {
         userService.saveUser(user);
-        return "redirect:/login";
+        return new RedirectView("/RegistrationForm");
     }
 }

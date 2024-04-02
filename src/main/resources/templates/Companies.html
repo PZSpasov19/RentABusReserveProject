@@ -8,17 +8,22 @@
 <body>
 <div class="container">
     <header>
-        <img src="../Logo/logo.png" alt="Logo" class="logo">
+        <img src="../static/Images/logo.png" alt="Logo" class="logo" th:src="@{/Images/logo.png}">
         <nav>
             <ul class="menu">
                 <li><a th:href="@{/Home}">Главна страница</a></li>
                 <li><a th:href="@{/about}">За нас</a></li>
                 <li><a th:href="@{/gallery}">Галерия</a></li>
                 <li><a th:href="@{/companies}">Компании</a></li>
+                <li sec:authorize="isAuthenticated()"><a th:href="@{/companies}">Заявки</a>
+                <li sec:authorize="isAnonymous()"><button th:onclick="|window.location.href='/RegistrationForm'|" class="fixed-element">Login/Register</button></li>
+                <li sec:authorize="isAuthenticated()"><button sec:authentication="principal.username" class="fixed-element">email@here</button></li>
             </ul>
         </nav>
     </header>
 </div>
+
+<p class = "paragraph">Това са компаниите, от които може да наемате автобуси чрез заявка</p>
 <script src="../JavaScript/MenuBar.js"></script>
 </body>
 </html>

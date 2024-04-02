@@ -1,3 +1,17 @@
+
+.fixed-element {
+    position: fixed;
+    top: 30px;
+    right: 40px;
+    font-size: 15px;
+    background-color: red;
+}
+
+.paragraph {
+    text-align: center;
+    font-size: 20px;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -6,8 +20,6 @@ body {
     margin: 0;
     padding: 0;
 }
-
-
 
 .container {
     background-size: cover;
@@ -65,8 +77,6 @@ header {
 
 }
 
-
-
 .Box {
     width: 400px;
     padding: 50px;
@@ -86,9 +96,126 @@ header {
     border-radius: 20px;
 }
 
+.form-container {
+    max-width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
 
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
 
+.form-container input[type="text"],
+.form-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
 
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #45a049;
+}
+
+.form-container .message {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
+.form-container .message a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form, .register-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form input, .register-form input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-form button, .register-form button {
+    background-color: #4CAF50;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-form button:hover, .register-form button:hover {
+    background-color: #45a049;
+}
+
+.message {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.message a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.message a:hover {
+    text-decoration: underline;
+}
+
+.profile-icon {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+.profile-icon a {
+    color: #333;
+    text-decoration: none;
+    font-size: 24px;
+}
 
 
 

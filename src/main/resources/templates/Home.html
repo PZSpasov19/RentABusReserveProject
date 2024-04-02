@@ -1,33 +1,52 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
   <meta charset="UTF-8">
   <title>Главна страница</title>
-  <link rel="stylesheet" href="../static/CSS/MenuBar.css" th:href="@{/CSS/MenuBar.css}">
+  <link rel="stylesheet" href="/static/CSS/MenuBar.css" th:href="@{/CSS/MenuBar.css}">
 </head>
+
 <body>
 
 <header>
-  <img src="../Images/logo.png" alt="Logo" class="logo" th:src="@{/logo.png}">
+  <img src="../static/Images/logo.png" alt="Logo" class="logo" th:src="@{/Images/logo.png}">
   <nav>
     <ul class="menu">
       <li><a th:href="@{/Home}">Главна страница</a></li>
       <li><a th:href="@{/about}">За нас</a></li>
       <li><a th:href="@{/gallery}">Галерия</a></li>
-      <li><a th:href="@{/companies}">Компании</a></li>
+      <li><a th:href="@{/companies}">Компании</a>
+      <li sec:authorize="isAuthenticated()"><a th:href="@{/companies}">Заявки</a>
+      <li sec:authorize="isAnonymous()"><button th:onclick="|window.location.href='/RegistrationForm'|" class="fixed-element">Login/Register</button></li>
+      <li sec:authorize="isAuthenticated()"><button sec:authentication="principal.username" class="fixed-element">email@here</button></li>
     </ul>
   </nav>
 </header>
-<div class="container">
 
+<!--
+
+<div class="main-navigation-right" sec:authorize="isAuthenticated()">
+  <a sec:authentication="principal.username" href="/profile">your@email.here</a>
+  <span>/</span>
+  <a href="/logout">logout</a>
 </div>
+
+<div class="main-navigation-right" sec:authorize="isAnonymous()">
+  <a href="/register">register</a>
+  <span>/</span>
+  <a href="/login">login</a>
+</div>
+-->
+
+<div class="container"></div>
 
 <div class="Box">
   <section class="parallax">
     <h1>Добре дошли в TravelWorld!</h1>
     <p>Открийте най-удобния начин за пътуване с нашите автобусни услуги.</p>
-    <img src="../Images/Bus.jpg" class="image-box" alt="Bus image">
-    <img src="../Images/Buses.jpg" alt="Bus image2">
+    <img src="../static/Images/Bus.jpg" class="image-box" alt="Bus image" th:src="@{/Images/Bus.jpg}">
+    <img src="../static/Images/Buses.jpg" alt="Bus image2" th:src="@{/Images/Buses.jpg}">
   </section>
 </div>
 
@@ -37,6 +56,5 @@
   <a th:href="@{/about}">Научете повече</a>
 </div>
 
-<script src="../JavaScript/MenuBar.js"></script>
 </body>
 </html>
