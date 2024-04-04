@@ -1,5 +1,6 @@
 package com.example.RentABus.config;
 
+import org.springframework.boot.autoconfigure.h2.H2ConsoleProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -16,6 +17,14 @@ import static org.springframework.security.config.Customizer.withDefaults;
 @EnableWebSecurity
 public class SecurityConfiguration {
 
+
+    @Bean
+    public H2ConsoleProperties h2ConsoleProperties() {
+        H2ConsoleProperties properties = new H2ConsoleProperties();
+        properties.setPath("/h2-console");
+        properties.setEnabled(true);
+        return properties;
+    }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
