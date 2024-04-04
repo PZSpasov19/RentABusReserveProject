@@ -13,13 +13,28 @@
             <ul class="menu">
                 <li><a th:href="@{/Home}">Главна страница</a></li>
                 <li><a th:href="@{/about}">За нас</a></li>
-                <li><a th:href="@{/gallery}">Галерия</a></li>
                 <li><a th:href="@{/companies}">Компании</a></li>
                 <li sec:authorize="isAnonymous()"><button th:onclick="|window.location.href='/RegistrationForm'|" class="fixed-element">Login/Register</button></li>
                 <li sec:authorize="isAuthenticated()"><button sec:authentication="principal.username" class="fixed-element">email@here</button></li>
             </ul>
         </nav>
     </header>
+    <section style = "color: black;">
+        <h1>Добре дошли в TravelWorld</h1>
+        <p>TravelWorld е създаден с цел да улесни вашия достъп до автобуси. Съдържа атобусни компании, които са за пътуване
+        в чужбина и в страната. Мисията ни е да предоставим добро и качествено пътуване на нашите клиенти, за да гарантираме
+        удобство при пътуването.</p>
+        <p>Ние правим всичко възможно, за да може нашите пътници да се чустват добре.</p>
+        <p>Благодарим ви, че избрахте TravelWorld за вашето следващо пътуване. Очакваме с нетърпение да ви обслужим!</p>
+
+        <div>
+            <h2>За връзка с нас, може да пишете на този имейл или да звънните на телефонния номер по-долу.с</h2>
+            <p>Email: info@travelworld.com</p>
+            <p>Телефон: +359 123 456 789</p>
+        </div>
+
+
+    </section>
 </div>
 <script src="../JavaScript/MenuBar.js"></script>
 </body>

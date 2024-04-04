@@ -34,7 +34,6 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(requests -> requests
                         .requestMatchers(toH2Console()).permitAll()
                         .requestMatchers("/Home", "/register", "/RegistrationForm").permitAll()
-
                         .requestMatchers("/CSS/*.css").permitAll()
                         .requestMatchers("/JavaScript/MenuBar.js").permitAll()
                         .requestMatchers("/Images/*.png").permitAll()

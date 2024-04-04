@@ -5,10 +5,22 @@
     <title>Компании</title>
     <link rel="stylesheet" href="../static/CSS/MenuBar.css" th:href="@{/CSS/MenuBar.css}">
     <style>
+
+        #menu-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff; /* Adjust as needed */
+            z-index: 1000; /* Ensure it's above other content */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow if desired */
+        }
+
+
         .paragraph {
             text-align: center;
             font-size: 20px;
-            margin-top: 100px;
+            margin-top: 80px;
         }
 
         .company-container {
@@ -39,6 +51,18 @@
             height: auto;
             border-radius: 10px;
         }
+        .search-bar {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #searchInput {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
@@ -49,7 +73,6 @@
             <ul class="menu">
                 <li><a th:href="@{/Home}">Главна страница</a></li>
                 <li><a th:href="@{/about}">За нас</a></li>
-                <li><a th:href="@{/gallery}">Галерия</a></li>
                 <li><a th:href="@{/companies}">Компании</a></li>
                 <li sec:authorize="isAnonymous()"><button th:onclick="|window.location.href='/RegistrationForm'|" class="fixed-element">Login/Register</button></li>
                 <li sec:authorize="isAuthenticated()"><button sec:authentication="principal.username" class="fixed-element">email@here</button></li>
@@ -59,6 +82,12 @@
 </div>
 
 <p class = "paragraph">Това са компаниите, от които може да наемате автобуси чрез заявка</p>
+
+
+<div class="search-bar">
+    <input type="text" id="searchInput" oninput="filterCompanies(event)" placeholder="Търсене по име на компания...">
+</div>
+
 
 <div class="company-container">
     <div class="company-info">
@@ -86,6 +115,36 @@
 </div>
 
 
-<script src="../JavaScript/MenuBar.js"></script>
+<div class="company-container">
+    <div class="company-info">
+        <h3>FlixBus Company</h3>
+        <p>ФликБъс е немска фирма за автобуси, която предлага междуградски автобусдни пътувания.
+            Автобусите предлагат модерно и спокойно пътуване, което да предостави удоволствие на пътниците.</p>
+    </div>
+    <div class="company-image">
+        <img src="../static/Images/FlixBus.jpg" alt="FlixBus Company" th:src="@{/Images/FlixBus.jpg}">
+    </div>
+</div>
+
+
+<script>
+    function filterCompanies(event) {
+        var input = event.target.value.trim().toUpperCase();
+        var companyContainers = document.querySelectorAll(".company-container");
+
+        companyContainers.forEach(function(container) {
+            var companyName = container.querySelector("h3").textContent.trim().toUpperCase();
+
+            if (companyName.includes(input)) {
+                container.style.display = "";
+            } else {
+                container.style.display = "none";
+            }
+        });
+    }
+
+</script>
+
+
 </body>
 </html>
