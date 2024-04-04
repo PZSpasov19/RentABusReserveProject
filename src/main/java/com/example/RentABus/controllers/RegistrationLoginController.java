@@ -19,6 +19,11 @@ public class RegistrationLoginController {
     public String getHome() {
         return "RegistrationForm";
     }
+
+    @PostMapping("/RegistrationForm")
+    public String RegistrationForm(){
+        return "redirect:/Home";
+    }
 //    @PostMapping("/register")
 //    public RedirectView getRegister(@ModelAttribute Users user) {
 //        userService.saveUser(user);

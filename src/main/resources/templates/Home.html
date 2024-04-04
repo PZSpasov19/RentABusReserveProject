@@ -17,8 +17,7 @@
       <li><a th:href="@{/about}">За нас</a></li>
       <li><a th:href="@{/gallery}">Галерия</a></li>
       <li><a th:href="@{/companies}">Компании</a>
-      <li sec:authorize="isAuthenticated()"><a th:href="@{/companies}">Заявки</a>
-      <li sec:authorize="isAnonymous()"><button th:onclick="|window.location.href='/RegistrationForm'|" class="fixed-element">Login/Register</button></li>
+      <li sec:authorize="isAnonymous()"><button th:onclick="|window.location.href='/RegistrationForm'|" class="fixed-element profile-icon" onclick="toggleForm()">Login/Register</button></li>
       <li sec:authorize="isAuthenticated()"><button sec:authentication="principal.username" class="fixed-element">email@here</button></li>
     </ul>
   </nav>
@@ -55,6 +54,22 @@
   <p>Ние сме водеща компания в предлагането на автобусни услуги за всеки тип пътуване. Нашите професионални и опитни шофьори, съвременни автобуси и персонализирани решения правят вашето пътуване приятно и безпроблемно.</p>
   <a th:href="@{/about}">Научете повече</a>
 </div>
+
+<script>
+  function toggleForm() {
+    var loginForm = document.querySelector('.login-form');
+    var registerForm = document.querySelector('.register-form');
+
+    if (loginForm.style.display === 'none') {
+      loginForm.style.display = 'block';
+      registerForm.style.display = 'none';
+    } else {
+      loginForm.style.display = 'none';
+      registerForm.style.display = 'block';
+    }
+  }
+
+</script>
 
 </body>
 </html>

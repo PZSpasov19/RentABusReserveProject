@@ -7,10 +7,13 @@
     background-color: red;
 }
 
+
 .paragraph {
     text-align: center;
     font-size: 20px;
+    padding: 90px;
 }
+
 
 html {
     scroll-behavior: smooth;
