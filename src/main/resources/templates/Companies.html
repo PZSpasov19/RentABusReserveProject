@@ -5,17 +5,9 @@
     <title>Компании</title>
     <link rel="stylesheet" href="../static/CSS/MenuBar.css" th:href="@{/CSS/MenuBar.css}">
     <style>
-
-        #menu-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #fff; /* Adjust as needed */
-            z-index: 1000; /* Ensure it's above other content */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow if desired */
+        .menu-bar {
+            z-index: -1;
         }
-
 
         .paragraph {
             text-align: center;
@@ -50,10 +42,11 @@
             max-width: 100%;
             height: auto;
             border-radius: 10px;
+            z-index: -1;
         }
         .search-bar {
-            text-align: center;
             margin-bottom: 20px;
+            margin-left: 30px;
         }
 
         #searchInput {
@@ -95,8 +88,8 @@
         <p>Никиши е турска компания, която предлага автобусни услуги. Автобусите са със съвремен дизайн
             и предалагат комфорт и безопастност по време на пътуване.</p>
     </div>
-    <div class="company-image">
-        <img src="/static/Images/Nisikli.jpg" alt="Nikishi Bus Company" th:src="@{/Images/Nisikli.jpg}">
+    <div class="company-image Box">
+        <img src="/static/Images/Nisikli.jpg" alt="Nikishi Bus Company" th:src="@{/Images/Nisikli.jpg}" style="height: 400px">
     </div>
 </div>
 
@@ -109,7 +102,7 @@
         <p>ФликБъс е немска фирма за автобуси, която предлага междуградски автобусдни пътувания.
             Автобусите предлагат модерно и спокойно пътуване, което да предостави удоволствие на пътниците.</p>
     </div>
-    <div class="company-image">
+    <div class="company-image Box">
         <img src="../static/Images/FlixBus.jpg" alt="FlixBus Company" th:src="@{/Images/FlixBus.jpg}">
     </div>
 </div>
@@ -117,12 +110,12 @@
 
 <div class="company-container">
     <div class="company-info">
-        <h3>FlixBus Company</h3>
-        <p>ФликБъс е немска фирма за автобуси, която предлага междуградски автобусдни пътувания.
-            Автобусите предлагат модерно и спокойно пътуване, което да предостави удоволствие на пътниците.</p>
+        <h3>Air Kona</h3>
+        <p>Air Kona е компания, която предоставя удобно и сигурно пътуване в чужбина. Искате автобус до Австрия - Air Kona е правилния ибор.
+        С новите си и модерни автобуси, Air Kona предоставя удобсно на пътниците.</p>
     </div>
-    <div class="company-image">
-        <img src="../static/Images/FlixBus.jpg" alt="FlixBus Company" th:src="@{/Images/FlixBus.jpg}">
+    <div class="company-image Box">
+        <img src="../static/Images/AirKona.jpg" alt="Air Kona" th:src="@{/Images/AirKona.jpg}" style="width: 700px"; height="300">
     </div>
 </div>
 
