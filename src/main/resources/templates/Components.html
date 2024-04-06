@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Spring Playground Application</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jost:wght@300&family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" media="all"
+        href="../static/style.css" th:href="@{/style.css}" />
+</head>
+<body>
+
+
+
+<h1>Here are some navigation elements</h1>
+
+<h2>Header navigation</h2>
+
+<header th:fragment="menu">
+  <img src="../static/Images/logo.png" alt="Logo" class="logo" th:src="@{/Images/logo.png}">
+  <nav>
+    <ul class="menu">
+      <li><a th:href="@{/}">Главна страница</a></li>
+      <li><a th:href="@{/about}">За нас</a></li>
+      <li><a th:href="@{/companies}">Компании</a>
+      <li sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/administration}">Потребители</a>
+      <li sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/reservations}">Заявки</a>
+    </ul>
+  </nav>
+
+
+  <div>
+    <button th:onclick="|window.location.href='/RegistrationForm'|" class="profile-icon" onclick="toggleForm()" sec:authorize="isAnonymous()">Login/Register</button>
+    <button sec:authentication="principal.username" class="fixed-element" sec:authorize="isAuthenticated()">email@here</button>
+    <form th:action="@{/logout}" method="post">
+      <button type="submit" class="profile-icon" sec:authorize="isAuthenticated()">Log out</button>
+    </form>
+  </div>
+
+
+</header>
+
+
+<h2>Footer</h2>
+
+<footer th:fragment="footer">
+  <p>Copyright codingburgas.org</p>
+</footer>
+</body>
+</html>
+
+

@@ -9,18 +9,6 @@
 
 <body>
 
-<header>
-  <img src="../static/Images/logo.png" alt="Logo" class="logo" th:src="@{/Images/logo.png}">
-  <nav>
-    <ul class="menu">
-      <li><a th:href="@{/Home}">Главна страница</a></li>
-      <li><a th:href="@{/about}">За нас</a></li>
-      <li><a th:href="@{/companies}">Компании</a>
-      <li sec:authorize="isAnonymous()"><button th:onclick="|window.location.href='/RegistrationForm'|" class="fixed-element profile-icon" onclick="toggleForm()">Login/Register</button></li>
-      <li sec:authorize="isAuthenticated()"><button sec:authentication="principal.username" class="fixed-element">email@here</button></li>
-    </ul>
-  </nav>
-</header>
 
 <!--
 
@@ -36,6 +24,8 @@
   <a href="/login">login</a>
 </div>
 -->
+
+<section th:insert="Components.html :: menu"></section>
 
 <div class="container"></div>
 

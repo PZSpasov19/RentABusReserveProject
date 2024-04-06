@@ -2,8 +2,10 @@ package com.example.RentABus.services;
 
 import com.example.RentABus.entities.Booking;
 
-public interface BookingService {
-    void saveBooking(Booking booking);
+import java.util.List;
 
-    Object getAllBookings();
+public interface BookingService {
+    List<Booking> getAllBookings();
+    Booking getBookingById(Long id);
+    void saveBooking(Booking booking);
 }

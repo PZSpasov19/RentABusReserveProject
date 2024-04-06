@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Заявки</title>
+  <link rel="stylesheet" href="/static/CSS/MenuBar.css" th:href="@{/CSS/MenuBar.css}">
+</head>
+
+<body>
+
+<section th:insert="Components.html :: menu"></section>
+
+<section style="text-align: center">
+  <h2>Заявки</h2>
+  <table border="1" style="margin-left: auto; margin-right: auto;">
+    <thead>
+    <tr>
+      <th>BookingId</th>
+      <th>User</th>
+      <th>BusType</th>
+      <th>DepartureData</th>
+      <th>ReturnDate</th>
+      <th>TotalCost</th>
+      <th>Options</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="booking: ${bookings}">
+      <td th:text="${booking.getBookingId()}"></td>
+      <td th:text="${booking.user?.id}"></td>
+      <td th:text="${booking.getBusType()}"></td>
+      <td th:text="${booking.getDepartureDate()}"></td>
+      <td th:text="${booking.getReturnDate()}"></td>
+      <td th:text="${booking.getTotalCost()}"></td>
+      <td>
+        <form th:action="|/administration/bookings/delete/${booking.getBookingId()}|" method="post">
+          <button type="submit">Delete</button>
+        </form>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+</body>
+</html>

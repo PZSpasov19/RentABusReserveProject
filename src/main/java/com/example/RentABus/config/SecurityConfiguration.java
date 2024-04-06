@@ -13,42 +13,84 @@ import org.springframework.security.web.SecurityFilterChain;
 import static org.springframework.boot.autoconfigure.security.servlet.PathRequest.toH2Console;
 import static org.springframework.security.config.Customizer.withDefaults;
 
+//@Configuration
+//@EnableWebSecurity
+//public class SecurityConfiguration {
+//
+//
+//    //@Bean
+//        //public H2ConsoleProperties h2ConsoleProperties() {
+//        //    H2ConsoleProperties properties = new H2ConsoleProperties();
+//        //    properties.setPath("/h2-console");
+//        //    properties.setEnabled(true);
+//        //    return properties;
+//        //}
+//
+//    @Bean
+//    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+//        http
+//                .csrf(AbstractHttpConfigurer::disable
+//                )
+//                .authorizeHttpRequests(requests -> requests
+//                        .requestMatchers(toH2Console()).permitAll()
+//                        .requestMatchers("/", "/about", "/companies",  "/register", "/RegistrationForm").permitAll()
+//                        .requestMatchers("/CSS/*.css").permitAll()
+//                        .requestMatchers("/JavaScript/MenuBar.js").permitAll()
+//                        .requestMatchers("/Images/*.png").permitAll()
+//                        .requestMatchers("/Images/*.jpg").permitAll()
+//                        .requestMatchers("*.css", "*.js", "*.png", "*.jpg").permitAll()     // ALLOW NOT REGISTERED USERS TO ACCESS STATIC RESOURCES
+//                        //.requestMatchers("/lesson/*").permitAll()                                 // ALLOW NOT REGISTERED USERS TO ACCESS ALL LESSONS
+//                        .requestMatchers("/RegistrationForm").permitAll()
+//                        .requestMatchers("/login").permitAll()
+//                        .requestMatchers("/register").anonymous()                                 // ALLOW ONLY UNREGISTERED USERS TO ACCESS REGISTRATION
+//                        //.requestMatchers("/users/*").hasAuthority("ADMIN")                        // ALLOW ONLY ADMINS TO ACCESS users view
+//                        .anyRequest().authenticated()
+//                ).headers(AbstractHttpConfigurer::disable)
+//                .formLogin(form -> form.loginPage("/RegistrationForm").permitAll())
+//                //.formLogin(withDefaults())
+//                .httpBasic(withDefaults());
+//        return http.build();
+//    }
+//
+//
+//    protected void configure(HttpSecurity http) throws Exception {
+//        http
+//                .logout()
+//                .logoutUrl("/logout")
+//                .invalidateHttpSession(true)
+//                .deleteCookies("JSESSIONID")
+//                .logoutSuccessUrl("/login")
+//                .permitAll();
+//    }
+//
+//
+//    @Bean
+//    PasswordEncoder passwordEncoder() {
+//        return NoOpPasswordEncoder.getInstance();
+//    }
+//}
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration {
 
-
-    @Bean
-    public H2ConsoleProperties h2ConsoleProperties() {
-        H2ConsoleProperties properties = new H2ConsoleProperties();
-        properties.setPath("/h2-console");
-        properties.setEnabled(true);
-        return properties;
-    }
-
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .csrf(AbstractHttpConfigurer::disable
-                )
+                .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(requests -> requests
                         .requestMatchers(toH2Console()).permitAll()
-                        .requestMatchers("/Home", "/register", "/RegistrationForm").permitAll()
-                        .requestMatchers("/CSS/*.css").permitAll()
-                        .requestMatchers("/JavaScript/MenuBar.js").permitAll()
-                        .requestMatchers("/Images/*.png").permitAll()
-                        .requestMatchers("/Images/*.jpg").permitAll()
-                        .requestMatchers("*.css", "*.js", "*.png", "*.jpg").permitAll()     // ALLOW NOT REGISTERED USERS TO ACCESS STATIC RESOURCES
-                        //.requestMatchers("/lesson/*").permitAll()                                 // ALLOW NOT REGISTERED USERS TO ACCESS ALL LESSONS
-                        .requestMatchers("/RegistrationForm").permitAll()
+                        .requestMatchers("/", "/about", "/companies", "/register", "/RegistrationForm").permitAll()
+                        .requestMatchers("/CSS/*.css", "/JavaScript/MenuBar.js", "/Images/*.png", "/Images/*.jpg").permitAll()
+                        .requestMatchers("*.css", "*.js", "*.png", "*.jpg").permitAll()
                         .requestMatchers("/login").permitAll()
-                        .requestMatchers("/register").anonymous()                                 // ALLOW ONLY UNREGISTERED USERS TO ACCESS REGISTRATION
-                        //.requestMatchers("/users/*").hasAuthority("ADMIN")                        // ALLOW ONLY ADMINS TO ACCESS users view
+                        .requestMatchers("/register").anonymous()
                         .anyRequest().authenticated()
-                ).headers(AbstractHttpConfigurer::disable)
+                )
                 .formLogin(form -> form.loginPage("/RegistrationForm").permitAll())
-                //.formLogin(withDefaults())
-                .httpBasic(withDefaults());
+                .httpBasic(withDefaults())
+                .headers(AbstractHttpConfigurer::disable);
+
         return http.build();
     }
 

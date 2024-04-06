@@ -23,11 +23,6 @@ public class UserController {
         return "login";
     }
 
-//    @PostMapping("/login")
-//    public String login(@ModelAttribute Users user) {
-//
-//        return "redirect:/buses";
-//    }
 
     @GetMapping("/register")
     public String showRegistrationForm(Model model) {

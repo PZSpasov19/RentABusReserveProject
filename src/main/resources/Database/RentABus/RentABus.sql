@@ -7,6 +7,8 @@ CREATE TABLE Admins (
      Password VARCHAR(255) NOT NULL
 );
 
+
+
 CREATE TABLE Users (
       UserId INT AUTO_INCREMENT PRIMARY KEY,
       Password VARCHAR(255) NOT NULL,

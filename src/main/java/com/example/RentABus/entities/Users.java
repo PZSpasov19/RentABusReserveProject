@@ -1,6 +1,5 @@
 package com.example.RentABus.entities;
 
-
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -8,7 +7,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.SimpleTimeZone;
 
 @Entity
 @Table(name = "Users")
@@ -17,8 +15,6 @@ public class Users implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "userid")
     private Long id;
-
-
 
     @Column(name = "password")
     private String password;
@@ -31,6 +27,9 @@ public class Users implements UserDetails {
 
     @OneToMany(mappedBy = "user")
     private List<Booking> bookingList;
+
+    //@Column(name = "allow_change_info")
+    //private boolean allowChangeInfo;
 
     public Users() {
     }
@@ -103,4 +102,12 @@ public class Users implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
+    //public boolean isAllowChangeInfo() {
+    //    return allowChangeInfo;
+    //}
+//
+    //public void setAllowChangeInfo(boolean allowChangeInfo) {
+    //    this.allowChangeInfo = allowChangeInfo;
+    //}
 }

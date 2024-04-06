@@ -1,7 +1,7 @@
 package com.example.RentABus.services;
 
 import com.example.RentABus.entities.BusCompanies;
-import com.example.RentABus.repositories.BusRepository;
+import com.example.RentABus.repositories.*;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

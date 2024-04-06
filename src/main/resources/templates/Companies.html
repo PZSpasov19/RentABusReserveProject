@@ -59,20 +59,7 @@
     </style>
 </head>
 <body>
-<div class="container">
-    <header>
-        <img src="../static/Images/logo.png" alt="Logo" class="logo" th:src="@{/Images/logo.png}">
-        <nav>
-            <ul class="menu">
-                <li><a th:href="@{/Home}">Главна страница</a></li>
-                <li><a th:href="@{/about}">За нас</a></li>
-                <li><a th:href="@{/companies}">Компании</a></li>
-                <li sec:authorize="isAnonymous()"><button th:onclick="|window.location.href='/RegistrationForm'|" class="fixed-element">Login/Register</button></li>
-                <li sec:authorize="isAuthenticated()"><button sec:authentication="principal.username" class="fixed-element">email@here</button></li>
-            </ul>
-        </nav>
-    </header>
-</div>
+<section th:insert="Components.html :: menu"></section>
 
 <p class = "paragraph">Това са компаниите, от които може да наемате автобуси чрез заявка</p>
 
@@ -86,7 +73,8 @@
     <div class="company-info">
         <h3>Nisikli Bus Company</h3>
         <p>Никиши е турска компания, която предлага автобусни услуги. Автобусите са със съвремен дизайн
-            и предалагат комфорт и безопастност по време на пътуване.</p>
+            и предалагат комфорт и безопастност по време на пътуване. Автобусът е с 30 места</p>
+        <button th:onclick="|window.location.href='BookingForm'|">Make a Request</button>
     </div>
     <div class="company-image Box">
         <img src="/static/Images/Nisikli.jpg" alt="Nikishi Bus Company" th:src="@{/Images/Nisikli.jpg}" style="height: 400px">
@@ -95,12 +83,12 @@
 
 
 
-
 <div class="company-container">
     <div class="company-info">
         <h3>FlixBus Company</h3>
         <p>ФликБъс е немска фирма за автобуси, която предлага междуградски автобусдни пътувания.
-            Автобусите предлагат модерно и спокойно пътуване, което да предостави удоволствие на пътниците.</p>
+            Автобусите предлагат модерно и спокойно пътуване, което да предостави удоволствие на пътниците. Автобусът предлага 27 свободни места за удобство</p>
+        <button th:onclick="|window.location.href='BookingForm'|">Make a Request</button>
     </div>
     <div class="company-image Box">
         <img src="../static/Images/FlixBus.jpg" alt="FlixBus Company" th:src="@{/Images/FlixBus.jpg}">
@@ -108,16 +96,19 @@
 </div>
 
 
+
 <div class="company-container">
     <div class="company-info">
         <h3>Air Kona</h3>
         <p>Air Kona е компания, която предоставя удобно и сигурно пътуване в чужбина. Искате автобус до Австрия - Air Kona е правилния ибор.
-        С новите си и модерни автобуси, Air Kona предоставя удобсно на пътниците.</p>
+            С новите си и модерни автобуси, Air Kona предоставя удобсно на пътниците. Автобусите на AirKona осигоряват големи автобуси за голяма група хора с 35 места.</p>
+        <button th:onclick="|window.location.href='BookingForm'|">Make a Request</button>
     </div>
     <div class="company-image Box">
         <img src="../static/Images/AirKona.jpg" alt="Air Kona" th:src="@{/Images/AirKona.jpg}" style="width: 700px"; height="300">
     </div>
 </div>
+
 
 
 <script>
@@ -135,6 +126,8 @@
             }
         });
     }
+
+
 
 </script>
 

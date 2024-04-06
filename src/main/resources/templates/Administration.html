@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Потребители</title>
+    <link rel="stylesheet" href="/static/CSS/MenuBar.css" th:href="@{/CSS/MenuBar.css}">
+</head>
+
+<body>
+
+
+<section th:insert="Components.html :: menu"></section>
+
+<section style="text-align: center">
+    <h2>Users</h2>
+    <table border="1" style="margin-left: auto; margin-right: auto;">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Fullname</th>
+                <th>Email</th>
+                <th>Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="user: ${users}">
+                <td th:text="${user.getId()}"></td>
+                <td th:text="${user.getFullName()}"></td>
+                <td th:text="${user.getEmailAddress()}"></td>
+                <td>
+                    <a th:href="|/administration/users/${user.getId()}|"><button >Edit</button></a>
+
+                    <form th:action="|/administration/users/delete/${user.getId()}|" method="post">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+</body>
+</html>

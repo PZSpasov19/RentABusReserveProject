@@ -24,5 +24,9 @@ public class AdminServiceImpl implements AdminService {
     public List<Admins> getAllAdmins() {
         return adminRepository.findAll();
     }
-    // Additional methods implementation
+
+    @Override
+    public void save(Admins admin) {
+        adminRepository.save(admin);
+    }
 }

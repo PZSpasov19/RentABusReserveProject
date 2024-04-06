@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Редактирай потребител</title>
+    <link rel="stylesheet" href="/static/CSS/MenuBar.css" th:href="@{/CSS/MenuBar.css}">
+</head>
+
+<body>
+
+
+<section th:insert="Components.html :: menu"></section>
+
+<section>
+    <h2>Редактирай потребител</h2>
+    <form th:action="|/administration/users/${user.getId()}|" method="post">
+        <div>
+            <label>ID</label>
+            <input type="text" name="id" th:value="${user.getId()}" disabled/>
+        </div>
+        <div>
+            <label>Fullname</label>
+            <input type="text" name="fullName" th:value="${user.getFullName()}" required />
+        </div>
+
+        <div>
+            <label>Email address</label>
+            <input type="text" name="emailAddress" th:value="${user.getEmailAddress()}" disabled/>
+        </div>
+
+        <button type="submit">SAVE</button>
+
+    </form>
+
+</section>
+
+</body>
+</html>

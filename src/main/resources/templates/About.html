@@ -7,18 +7,7 @@
 </head>
 <body>
 <div class="container">
-    <header>
-        <img src="../static/Images/logo.png" alt="Logo" class="logo" th:src="@{/Images/logo.png}">
-        <nav>
-            <ul class="menu">
-                <li><a th:href="@{/Home}">Главна страница</a></li>
-                <li><a th:href="@{/about}">За нас</a></li>
-                <li><a th:href="@{/companies}">Компании</a></li>
-                <li sec:authorize="isAnonymous()"><button th:onclick="|window.location.href='/RegistrationForm'|" class="fixed-element">Login/Register</button></li>
-                <li sec:authorize="isAuthenticated()"><button sec:authentication="principal.username" class="fixed-element">email@here</button></li>
-            </ul>
-        </nav>
-    </header>
+    <section th:insert="Components.html :: menu"></section>
     <section style = "color: black;">
         <h1 style="text-align: center">Добре дошли в TravelWorld</h1>
         <p>TravelWorld е създаден с цел да улесни вашия достъп до автобуси. Съдържа атобусни компании, които са за пътуване

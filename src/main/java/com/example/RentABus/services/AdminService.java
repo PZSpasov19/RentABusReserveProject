@@ -6,5 +6,7 @@ public interface AdminService {
     Admins getAdminByUsername(String username);
 
     Object getAllAdmins();
+
+    void save(Admins admin);
 }
 
